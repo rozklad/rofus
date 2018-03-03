@@ -38,6 +38,11 @@ class Service
   protected $certificate;
 
   /**
+   * @var bool
+   */
+  protected $exceptions;
+
+  /**
    * @var array
    */
   protected $options;
@@ -133,6 +138,31 @@ class Service
   }
 
   /**
+   * Set exceptions option - enables muting exceptions
+   *
+   * @param boolean $exceptions
+   *
+   * @return $this
+   */
+  public function exceptions($exceptions)
+  {
+    $this->exceptions = $exceptions;
+
+    return $this;
+  }
+
+  /**
+   * Get the exceptions option
+   *
+   * @return boolean
+   */
+  public function getExceptions()
+  {
+    return $this->exceptions;
+  }
+
+
+  /**
    * Set the WSDL cache
    *
    * @param $cache
@@ -213,6 +243,7 @@ class Service
   {
     $options = [
       'trace'      => $this->getTrace(),
+      'exceptions' => $this->getExceptions(),
       'cache_wsdl' => $this->getCache(),
       'classmap'   => $this->getClassmap(),
     ];
