@@ -14,5 +14,5 @@
     "rozklad/rofus": ">=1.2.0"
   },
   "minimum-stability": "stable",
-  "keywords": ["rozklad", "rofus"]
+  "keywords": ["rofus", "soap", "examples"]
 }
