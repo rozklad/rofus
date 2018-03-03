@@ -35,3 +35,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# General #
+###########
+vendor/
+node_modules/
+npm-debug.log

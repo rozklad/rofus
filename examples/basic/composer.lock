@@ -1,0 +1,71 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b01ba0d96731d63962a816c62546b021",
+    "packages": [
+        {
+            "name": "rozklad/rofus",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rozklad/rofus.git",
+                "reference": "ab42206900491bff1bacc5772e4cd4a4477b21f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rozklad/rofus/zipball/ab42206900491bff1bacc5772e4cd4a4477b21f7",
+                "reference": "ab42206900491bff1bacc5772e4cd4a4477b21f7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Rozklad\\Rofus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "rozklad",
+                    "email": "jan.rozklad@gmail.com",
+                    "homepage": "http://rozklad.me"
+                },
+                {
+                    "name": "bitterend",
+                    "email": "info@bitterend.io",
+                    "homepage": "https://www.bitterend.io"
+                }
+            ],
+            "description": "Rofus SOAP client",
+            "keywords": [
+                "rofus",
+                "soap"
+            ],
+            "time": "2018-03-03 12:45:15"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "rozklad/rofus": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": []
+}
