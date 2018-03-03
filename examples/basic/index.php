@@ -27,8 +27,6 @@ require __DIR__.'/vendor/autoload.php';
 |
 */
 
-dd(class_exists('Rozklad\Rofus\Client'));
-
 use Rozklad\Rofus\Request\GamblerCheck;
 use Rozklad\Rofus\Response\GamblerCheck as GamblerCheckResponse;
 
@@ -43,6 +41,8 @@ $soapWrapper->add('Rofus', function($service) {
             GamblerCheckResponse::class,
         ]);
 });
+
+dd('xxx');
 
 $response = $soapWrapper->call('Rofus.GamblerCheck', [
     new GamblerCheck('2107753055')
