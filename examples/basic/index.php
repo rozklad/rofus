@@ -27,7 +27,7 @@ require __DIR__.'/vendor/autoload.php';
 |
 */
 
-var_dump(class_exists('Rozklad\Rofus\Client'));
+dd(class_exists('Rozklad\Rofus\Client'));
 
 use Rozklad\Rofus\Request\GamblerCheck;
 use Rozklad\Rofus\Response\GamblerCheck as GamblerCheckResponse;
