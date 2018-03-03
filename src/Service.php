@@ -1,6 +1,6 @@
 <?php
 
-namespace Artisaninweb\SoapWrapper;
+namespace Rozklad\Rofus;
 
 use SoapClient;
 use SoapHeader;
