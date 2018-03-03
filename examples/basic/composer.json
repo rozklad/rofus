@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "rozklad/rofus": ">=1.2.0"
+    "rozklad/rofus": ">=0.1.0"
   },
   "minimum-stability": "stable",
   "keywords": ["rofus", "soap", "examples"]
