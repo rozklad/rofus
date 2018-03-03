@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skat.dk/lur/GamblerCommonTypes"
+	xmlns:tns="http://www.skat.dk/lur/GamblerCommonTypes">
+
+	<complexType name="HeadInformationRequestType">
+		<sequence>
+    		<element name="Kontekst" type="tns:KontekstType"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="HeadInformationResponseType">
+    	<sequence>
+			<element name="Kontekst" type="tns:KontekstType"/>
+		</sequence>
+    </complexType>
+    
+	<complexType name="KontekstType">
+		<sequence>
+			<any namespace="##other" processContents="skip"/>
+		</sequence>
+	</complexType>
+	
+    <complexType name="PersonInformationType">
+		<sequence>
+			<element name="PersonCPRNumber" type="tns:PersonCPRNumberType"/>
+		</sequence>
+	</complexType>
+
+	<simpleType name="TilladelsesindehaverType">
+		<restriction base="string"></restriction>
+	</simpleType>
+
+	<simpleType name="PersonCPRNumberType">
+		<restriction base="string">
+			<pattern value="\d{10}|(\d{6}\-\d{4})" />
+		</restriction>
+	</simpleType>
+</schema>

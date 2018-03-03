@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://www.skat.dk/lur/GamblerCSRPValidationResponse" 
+		xmlns:tns="http://www.skat.dk/lur/GamblerCSRPValidationResponse"
+		xmlns:com="http://www.skat.dk/lur/GamblerCommonTypes">
+		
+	<import namespace="http://www.skat.dk/lur/GamblerCommonTypes" schemaLocation="GamblerCommonTypes.xsd"/>
+
+	<complexType name="GamblerCSRPValidationResponse">
+		<complexContent>
+			<extension base="com:HeadInformationResponseType">
+				<sequence>
+					<element name="GamblerStatus" type="tns:GamblerStatusType"
+						minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="GamblerStatusType">
+		<sequence>
+			<element name="GamblerCPRStatus" type="tns:CPRStatusType"/>
+			<element name="GamblerAgeStatus" type="tns:AgeStatusType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+
+	<simpleType name="CPRStatusType">
+		<restriction base="string">
+			<enumeration value="CPRIsNotRegistered"/>
+			<enumeration value="CPRIsRegistered"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="AgeStatusType">
+		<restriction base="string">
+			<enumeration value="AgeIs18OrAbove"/>
+			<enumeration value="AgeIs17OrBelow"/>
+		</restriction>
+	</simpleType>
+
+</schema>

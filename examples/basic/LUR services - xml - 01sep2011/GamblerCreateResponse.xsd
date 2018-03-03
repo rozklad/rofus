@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://www.skat.dk/lur/GamblerCreateResponse" 
+		xmlns:tns="http://www.skat.dk/lur/GamblerCreateResponse"
+		xmlns:com="http://www.skat.dk/lur/GamblerCommonTypes">
+
+	<import namespace="http://www.skat.dk/lur/GamblerCommonTypes" schemaLocation="GamblerCommonTypes.xsd"/>
+
+
+	<complexType name="GamblerCreateResponse">
+		<complexContent>
+			<extension base="com:HeadInformationResponseType">
+				<sequence>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+    	
+</schema>

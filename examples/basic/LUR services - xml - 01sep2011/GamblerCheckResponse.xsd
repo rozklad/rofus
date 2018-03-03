@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://www.skat.dk/lur/GamblerCheckResponse" 
+		xmlns:tns="http://www.skat.dk/lur/GamblerCheckResponse"
+		xmlns:com="http://www.skat.dk/lur/GamblerCommonTypes">
+		
+	<import namespace="http://www.skat.dk/lur/GamblerCommonTypes" schemaLocation="GamblerCommonTypes.xsd"/>
+
+	<complexType name="GamblerCheckResponse">
+		<complexContent>
+			<extension base="com:HeadInformationResponseType">
+				<sequence>
+					<element name="ExclusionStatus" type="tns:ExclusionStatusType"
+						minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="ExclusionStatusType">
+		<sequence>
+			<element name="GamblerExclusionStatus" type="tns:GamblerExclusionStatusType"/>
+		</sequence>
+	</complexType>
+
+	<simpleType name="GamblerExclusionStatusType">
+		<restriction base="string">
+			<enumeration value="PersonIsNotRegistered"/>
+			<enumeration value="PersonIsRegisteredIndefinitely"/>
+			<enumeration value="PersonIsRegisteredTemporarily"/>
+		</restriction>
+	</simpleType>
+</schema>

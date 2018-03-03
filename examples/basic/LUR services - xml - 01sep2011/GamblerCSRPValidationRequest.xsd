@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://www.skat.dk/lur/GamblerCSRPValidationRequest" 
+		xmlns:tns="http://www.skat.dk/lur/GamblerCSRPValidationRequest"		
+		xmlns:com="http://www.skat.dk/lur/GamblerCommonTypes">
+
+	<import namespace="http://www.skat.dk/lur/GamblerCommonTypes" schemaLocation="GamblerCommonTypes.xsd"/>
+
+	<complexType name="GamblerCSRPValidationRequest">
+		<complexContent>
+			<extension base="com:HeadInformationRequestType">
+				<sequence>
+					<element name="PersonInformation" type="com:PersonInformationType" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+</schema>

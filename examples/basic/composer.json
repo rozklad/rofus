@@ -1,0 +1,20 @@
+{
+    "name": "rozklad/rofus-examples-basic",
+    "description": "Rofus SOAP client examples: Basic",
+    "authors": [
+        {
+            "name": "bitterend",
+            "email": "info@bitterend.io",
+            "homepage": "https://www.bitterend.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "rozklad/rofus": ">=1.2.0"
+    },
+    "minimum-stability": "stable",
+    "keywords": [
+        "rozklad",
+        "rofus"
+    ]
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://www.skat.dk/lur/GamblerCreateRequest" 
+		xmlns:tns="http://www.skat.dk/lur/GamblerCreateRequest"
+		xmlns:com="http://www.skat.dk/lur/GamblerCommonTypes">
+
+	<import namespace="http://www.skat.dk/lur/GamblerCommonTypes" schemaLocation="GamblerCommonTypes.xsd"/>
+
+
+	<complexType name="GamblerCreateRequest">
+		<complexContent>
+			<extension base="com:HeadInformationRequestType">
+				<sequence>
+					<element name="Actor" type="com:TilladelsesindehaverType" />
+					<element name="PersonInformation" type="com:PersonInformationType" />
+					<element name="ExclusionStart" type="tns:ExclusionStartType" />
+					<element name="ExclusionEnd" type="tns:ExclusionEndType"
+						minOccurs="0" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+ 	
+ 	<complexType name="ExclusionStartType">
+ 		<sequence>
+			<element name="GameExclusionStartDate" type="tns:LurDateType"/>
+			<element name="GameExclusionStartTime" type="tns:LurTimeType"/>
+		</sequence>
+ 	</complexType>
+ 	
+ 	 	<complexType name="ExclusionEndType">
+ 		<sequence>
+			<element name="GameExclusionEndDate" type="tns:LurDateType"/>
+			<element name="GameExclusionEndTime" type="tns:LurTimeType"/>
+		</sequence>
+ 	</complexType>
+ 	
+ 	<simpleType name="LurDateType">
+    	<restriction base="string">
+     		<pattern value="\d{4}\-\d{2}\-\d{2}"/>
+    	</restriction>
+ 	</simpleType>
+ 	
+ 	 	<simpleType name="LurTimeType">
+    	<restriction base="string">
+     		<pattern value="\d{2}:\d{2}:\d{2}"/>
+    	</restriction>
+ 	</simpleType>
+
+
+</schema>

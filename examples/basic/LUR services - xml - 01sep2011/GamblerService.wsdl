@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s0:definitions xmlns:s0="http://schemas.xmlsoap.org/wsdl/" 
+				xmlns:s1="http://services.lur.skat.dk" 
+				xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/" 
+				name="GamblerService" 
+				targetNamespace="http://services.lur.skat.dk">
+				
+  <s0:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    			xmlns:tns="http://services.lur.skat.dk"
+    			xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+    			xmlns:rreq="http://www.skat.dk/lur/GamblerCreateRequest" 
+    			xmlns:rres="http://www.skat.dk/lur/GamblerCreateResponse" 
+    			xmlns:creq="http://www.skat.dk/lur/GamblerCheckRequest" 
+    			xmlns:cres="http://www.skat.dk/lur/GamblerCheckResponse"
+    			xmlns:reqCpr="http://www.skat.dk/lur/GamblerCSRPValidationRequest" 
+    			xmlns:resCpr="http://www.skat.dk/lur/GamblerCSRPValidationResponse"  
+    			targetNamespace="http://services.lur.skat.dk">
+    			
+      <xsd:import namespace="http://www.skat.dk/lur/GamblerCreateRequest" schemaLocation="GamblerCreateRequest.xsd" />
+      <xsd:import namespace="http://www.skat.dk/lur/GamblerCreateResponse" schemaLocation="GamblerCreateResponse.xsd" />
+      <xsd:import namespace="http://www.skat.dk/lur/GamblerCheckRequest" schemaLocation="GamblerCheckRequest.xsd" />
+      <xsd:import namespace="http://www.skat.dk/lur/GamblerCheckResponse" schemaLocation="GamblerCheckResponse.xsd" />
+      <xsd:import namespace="http://www.skat.dk/lur/GamblerCSRPValidationRequest" schemaLocation="GamblerCSRPValidationRequest.xsd" />
+      <xsd:import namespace="http://www.skat.dk/lur/GamblerCSRPValidationResponse" schemaLocation="GamblerCSRPValidationResponse.xsd" />
+      
+      <xsd:element name="GamblerCreateRequest" type="rreq:GamblerCreateRequest" />
+      <xsd:element name="GamblerCreateResponse" type="rres:GamblerCreateResponse" />
+      <xsd:element name="GamblerCheckRequest" type="creq:GamblerCheckRequest" />
+      <xsd:element name="GamblerCheckResponse" type="cres:GamblerCheckResponse" />
+      <xsd:element name="GamblerCSRPValidationRequest" type="reqCpr:GamblerCSRPValidationRequest" />
+      <xsd:element name="GamblerCSRPValidationResponse" type="resCpr:GamblerCSRPValidationResponse" />
+    </xsd:schema>
+  </s0:types>
+  
+  <s0:message name="GamblerCreateRequest">
+    <s0:part element="s1:GamblerCreateRequest" name="GamblerCreateRequest" />
+  </s0:message>
+  <s0:message name="GamblerCreateResponse">
+    <s0:part element="s1:GamblerCreateResponse" name="GamblerCreateResponse" />
+  </s0:message>
+    <s0:message name="GamblerCheckRequest">
+    <s0:part element="s1:GamblerCheckRequest" name="GamblerCheckRequest" />
+  </s0:message>
+  <s0:message name="GamblerCheckResponse">
+    <s0:part element="s1:GamblerCheckResponse" name="GamblerCheckResponse" />
+  </s0:message>
+  <s0:message name="GamblerCSRPValidationRequest">
+    <s0:part element="s1:GamblerCSRPValidationRequest" name="GamblerCSRPValidationRequest" />
+  </s0:message>
+  <s0:message name="GamblerCSRPValidationResponse">
+    <s0:part element="s1:GamblerCSRPValidationResponse" name="GamblerCSRPValidationResponse" />
+  </s0:message>
+  
+  
+  <s0:portType name="GamblerService">
+    <s0:operation name="GamblerCreate">
+      <s0:input message="s1:GamblerCreateRequest" />
+      <s0:output message="s1:GamblerCreateResponse" />
+    </s0:operation>
+    
+	<s0:operation name="GamblerCheck">
+      <s0:input message="s1:GamblerCheckRequest" />
+      <s0:output message="s1:GamblerCheckResponse" />
+    </s0:operation>
+   	<s0:operation name="GamblerCSRPValidation">
+      <s0:input message="s1:GamblerCSRPValidationRequest" />
+      <s0:output message="s1:GamblerCSRPValidationResponse" />
+    </s0:operation>
+  </s0:portType>
+  
+  
+  <s0:binding name="GamblerServiceSOAP" type="s1:GamblerService">
+    <s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <s0:operation name="GamblerCreate">
+      <s0:input>
+        <s2:body use="literal" parts="GamblerCreateRequest" />
+      </s0:input>
+      <s0:output>
+        <s2:body use="literal" parts="GamblerCreateResponse" />
+      </s0:output>
+    </s0:operation>
+      
+    <s0:operation name="GamblerCheck">
+      <s0:input>
+        <s2:body use="literal" parts="GamblerCheckRequest" />
+      </s0:input>
+      <s0:output>
+        <s2:body use="literal" parts="GamblerCheckResponse" />
+      </s0:output>
+    </s0:operation>
+    
+    <s0:operation name="GamblerCSRPValidation">
+      <s0:input>
+        <s2:body use="literal" parts="GamblerCSRPValidationRequest" />
+      </s0:input>
+      <s0:output>
+        <s2:body use="literal" parts="GamblerCSRPValidationResponse" />
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  
+  
+  <s0:service name="GamblerService">
+    <s0:port binding="s1:GamblerServiceSOAP" name="GamblerServiceSOAP">
+      <s2:address location="http://localhost:7001/LUR/GamblerService" />
+    </s0:port>
+  </s0:service>
+  
+</s0:definitions>
