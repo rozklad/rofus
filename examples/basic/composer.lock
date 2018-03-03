@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rozklad/rofus.git",
-                "reference": "ab42206900491bff1bacc5772e4cd4a4477b21f7"
+                "reference": "8d842a188427b0edec94986934648375696cc5d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rozklad/rofus/zipball/ab42206900491bff1bacc5772e4cd4a4477b21f7",
-                "reference": "ab42206900491bff1bacc5772e4cd4a4477b21f7",
+                "url": "https://api.github.com/repos/rozklad/rofus/zipball/8d842a188427b0edec94986934648375696cc5d1",
+                "reference": "8d842a188427b0edec94986934648375696cc5d1",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "rofus",
                 "soap"
             ],
-            "time": "2018-03-03 12:45:15"
+            "time": "2018-03-03 12:56:23"
         }
     ],
     "packages-dev": [],

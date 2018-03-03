@@ -7,23 +7,23 @@ class GamblerCheck
   /**
    * @var string
    */
-  protected $GetConversionAmountResult;
+  protected $GetGamblerCheckResult;
 
   /**
-   * GetConversionAmountResponse constructor.
+   * GamblerCheckResponse constructor.
    *
    * @param string
    */
-  public function __construct($GetConversionAmountResult)
+  public function __construct($GetGamblerCheckResult)
   {
-    $this->GetConversionAmountResult = $GetConversionAmountResult;
+    $this->GetGamblerCheckResult = $GetGamblerCheckResult;
   }
 
   /**
    * @return string
    */
-  public function getGetConversionAmountResult()
+  public function getGetGamblerCheckResult()
   {
-    return $this->GetConversionAmountResult;
+    return $this->GetGamblerCheckResult;
   }
 }
