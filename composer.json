@@ -1,32 +1,28 @@
 {
-    "name": "rozklad/rofus",
-    "description": "Rofus SOAP client",
-    "authors": [
-        {
-            "name": "bitterend",
-            "email": "info@bitterend.io",
-            "homepage": "https://www.bitterend.io"
-        },
-        {
-            "name": "rozklad",
-            "email": "jan.rozklad@gmail.com",
-            "homepage": "http://rozklad.me"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0"
+  "name": "rozklad/rofus",
+  "description": "Rofus SOAP client",
+  "license": "WTFPL",
+  "authors": [
+    {
+      "name": "bitterend",
+      "email": "info@bitterend.io",
+      "homepage": "https://www.bitterend.io"
     },
-    "autoload": {
-        "files": [
-            "src/helpers.php"
-        ],
-        "psr-4": {
-            "Rozklad\\Rofus\\": "src/"
-        }
-    },
-    "minimum-stability": "stable",
-    "keywords": [
-        "rofus",
-        "soap"
-    ]
+    {
+      "name": "rozklad",
+      "email": "jan.rozklad@gmail.com",
+      "homepage": "http://rozklad.me"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "files": ["src/helpers.php"],
+    "psr-4": {
+      "Rozklad\\Rofus\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "keywords": ["rofus", "soap"]
 }
