@@ -47,11 +47,22 @@ $response = $soapWrapper->call('Rofus.GamblerCheck', [
     new GamblerCheck('2107753055')
 ]);
 
-echo "====== REQUEST HEADERS =====" . PHP_EOL;
-var_dump($soapWrapper->__getLastRequestHeaders());
-echo "========= REQUEST ==========" . PHP_EOL;
-var_dump($soapWrapper->__getLastRequest());
-echo "========= RESPONSE =========" . PHP_EOL;
-var_dump($response);
+$soapWrapper->client('Rofus', function($service) {
+    echo "====== REQUEST HEADERS =====" . PHP_EOL;
+    echo '<pre>';
+    var_dump(htmlentities($service->__getLastRequestHeaders()));
+    echo '</pre>';
+    echo "========= REQUEST ==========" . PHP_EOL;
+    echo '<pre>';
+    var_dump(htmlentities($service->__getLastRequest()));
+    echo '</pre>';
+    echo "========= RESPONSE =========" . PHP_EOL;
+    echo '<pre>';
+    var_dump(htmlentities($service->__getLastResponse()));
+    echo '</pre>';
+});
 
+
+echo '<pre>';
 var_dump($response);
+echo '</pre>';

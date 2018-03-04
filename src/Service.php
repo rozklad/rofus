@@ -241,11 +241,22 @@ class Service
    */
   public function getOptions()
   {
+    // @todo: move to controller
+    $credentials = env('ROFUS=CREDENTIALS');
+    $auth = base64_encode($credentials);
+    $context = ['http' =>
+        [
+            'header'  => "Authorization: Basic ".$auth
+        ]
+    ];
+
+
     $options = [
       'trace'      => $this->getTrace(),
       'exceptions' => $this->getExceptions(),
       'cache_wsdl' => $this->getCache(),
       'classmap'   => $this->getClassmap(),
+      'stream_context' => stream_context_create($context)
     ];
 
     if ($this->certificate) {
