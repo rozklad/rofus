@@ -241,8 +241,7 @@ class Service
    */
   public function getOptions()
   {
-    // @todo: move to controller
-    $credentials = env('ROFUS=CREDENTIALS');
+    $credentials = getenv('ROFUS_CREDENTIALS') ? getenv('ROFUS_CREDENTIALS') : 'Betbuzz:Nov15&17';
     $auth = base64_encode($credentials);
     $context = ['http' =>
         [
@@ -256,6 +255,7 @@ class Service
       'exceptions' => $this->getExceptions(),
       'cache_wsdl' => $this->getCache(),
       'classmap'   => $this->getClassmap(),
+      'features'   => SOAP_SINGLE_ELEMENT_ARRAYS,
       'stream_context' => stream_context_create($context)
     ];
 

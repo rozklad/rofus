@@ -19,6 +19,30 @@ class Client extends SoapClient
   protected $wsdl;
 
   /**
+   * Override __doRequest to debug before sending request over
+   *
+   * @param [type] $request
+   * @param [type] $location
+   * @param [type] $action
+   * @param [type] $version
+   * @param integer $one_way
+   * @return void
+   */
+  public function __doRequest($request, $location, $action, $version, $one_way = 0) 
+  {
+    $this->debug($request, $location, $action, $version, $one_way);
+
+    return parent::__doRequest($request, $location, $action, $version, $one_way);
+  }
+
+  public function debug($request, $location, $action, $version, $one_way) 
+  {
+    echo '<pre style="color: red; border: 1px solid red;">';
+    echo htmlentities($request);
+    echo '</pre>';
+  }
+
+  /**
    * Client constructor.
    *
    * @param string $wsdl
