@@ -9,6 +9,10 @@ class GamblerCheck
    */
   protected $PersonCPRNumber;
 
+  protected $Kontekst;
+
+  protected $PersonInformation;
+
   /**
    * GamblerCheck constructor.
    *
