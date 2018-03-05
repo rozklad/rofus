@@ -46,7 +46,7 @@ $soapWrapper->add('Rofus', function($service) {
 });
 
 $response = $soapWrapper->call('Rofus.GamblerCheck', [
-    new GamblerCheckRequest('1111113333')
+    new GamblerCheckRequest('1210653014')
 ]);
 
 $soapWrapper->client('Rofus', function($service) {
