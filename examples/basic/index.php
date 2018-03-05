@@ -32,6 +32,12 @@ use Rozklad\Rofus\Response\GamblerCheck as GamblerCheckResponse;
 
 ini_set('soap.wsdl_cache_enabled', 0);
 
+/*
+1210653014 - PersonIsNotRegistered
+1110664016 - PersonIsRegisteredTemporarily
+1110910017 - PersonIsRegisteredIndefinitely
+*/
+
 $soapWrapper = new Rozklad\Rofus\SoapWrapper;
 
 $soapWrapper->add('Rofus', function($service) {

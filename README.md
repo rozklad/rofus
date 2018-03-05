@@ -16,6 +16,8 @@ composer require rozklad/rofus
 
 ```
 ROFUS_CREDENTIALS=Login:Password
+ROFUS_USERNAME=Login
+ROFUS_PASSWORD=Password
 ```
 
 ## Changelog
