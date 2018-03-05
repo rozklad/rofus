@@ -39,7 +39,7 @@ class GamblerCheck
   {
     $object = new stdClass();
     $object->HovedOplysninger = new SoapVar('HovedOplysninger', SOAP_ENC_OBJECT, 'string', 'http://skat.dk/begrebsmodel/xml/schemas/kontekst/2007/05/31/', 'HovedOplysninger', 'ns1');
-    $object->HovedOplysninger->TransaktionsID = 'Betbuzz' . date('c') . 'r' . rand() * 100000;
+    $object->HovedOplysninger->TransaktionsID = ROFUS_USERNAME . date('c') . 'r' . rand() * 100000;
     $object->HovedOplysninger->TransaktionsTid = date('c');
 
     return new SoapVar($object, SOAP_ENC_OBJECT);

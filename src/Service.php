@@ -234,6 +234,13 @@ class Service
     return $this;
   }
 
+  public function setOption(string $name, $value)
+  {
+    $this->options[$name] = $value;
+
+    return $this;
+  }
+
   /**
    * Get the extra options
    *
@@ -241,22 +248,11 @@ class Service
    */
   public function getOptions()
   {
-    $credentials = getenv('ROFUS_CREDENTIALS') ? getenv('ROFUS_CREDENTIALS') : 'Betbuzz:Nov15&17';
-    $auth = base64_encode($credentials);
-    $context = ['http' =>
-        [
-            'header'  => "Authorization: Basic ".$auth
-        ]
-    ];
-
-
     $options = [
       'trace'      => $this->getTrace(),
       'exceptions' => $this->getExceptions(),
       'cache_wsdl' => $this->getCache(),
       'classmap'   => $this->getClassmap(),
-      'features'   => SOAP_SINGLE_ELEMENT_ARRAYS,
-      'stream_context' => stream_context_create($context)
     ];
 
     if ($this->certificate) {

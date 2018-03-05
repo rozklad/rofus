@@ -19,6 +19,13 @@ class Client extends SoapClient
   protected $wsdl;
 
   /**
+   * Set to true to use debug mode
+   *
+   * @var boolean
+   */
+  protected $debug = false;
+
+  /**
    * Override __doRequest to debug before sending request over
    *
    * @param [type] $request
@@ -37,9 +44,12 @@ class Client extends SoapClient
 
   public function debug($request, $location, $action, $version, $one_way) 
   {
-    echo '<pre style="color: red; border: 1px solid red;">';
-    echo htmlentities($request);
-    echo '</pre>';
+    if ($this->debug)
+    {
+      echo '<pre style="color: red; border: 1px solid red;">';
+      echo htmlentities($request);
+      echo '</pre>';
+    }
   }
 
   /**
