@@ -32,49 +32,6 @@ use Rozklad\Rofus\Response\GamblerCheck as GamblerCheckResponse;
 
 ini_set('soap.wsdl_cache_enabled', 0);
 
-/*
-$wsdl = 'https://rofusdemo.spillemyndigheden.dk/GamblerProject/GamblerService?wsdl';
-
-$trace = true;
-$exceptions = false;
-
-$xml = [];
-$xml['PersonCPRNumber'] = '2107753055';
-$xml['Kontekst'] = '';
-$xml['PersonInformation'] = '';
-
-$credentials = getenv('ROFUS_CREDENTIALS') ? getenv('ROFUS_CREDENTIALS') : 'Betbuzz:Nov15&17';
-$auth = base64_encode($credentials);
-$context = ['http' =>
-    [
-        'header'  => 'Authorization: Basic '.$auth
-    ]
-];
-
-try
-{
-   $client = new SoapClient($wsdl, [
-       'trace' => $trace,
-       'exceptions' => $exceptions,
-       'stream_context' => stream_context_create($context)
-   ]);
-   $response = $client->GamblerCheck($xml);
-   echo '<pre>';
-   echo htmlentities($client->__getLastRequest());
-   echo '</pre>';
-   echo '<pre>';
-   dd($response);
-   echo '</pre>';
-}
-
-catch (Exception $e)
-{
-   echo "Error!";
-   echo $e -> getMessage ();
-   echo 'Last response: '. $client->__getLastResponse();
-}
-*/
-
 $soapWrapper = new Rozklad\Rofus\SoapWrapper;
 
 $soapWrapper->add('Rofus', function($service) {
@@ -89,7 +46,7 @@ $soapWrapper->add('Rofus', function($service) {
 });
 
 $response = $soapWrapper->call('Rofus.GamblerCheck', [
-    new GamblerCheckRequest('2107753055')
+    new GamblerCheckRequest('1111113333')
 ]);
 
 $soapWrapper->client('Rofus', function($service) {
